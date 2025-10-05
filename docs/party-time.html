@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Eric Charnesky's Personal Page</title>
+  <link rel="icon" type="image/png" href="images/coffeesip56.png"/>    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="font-family: Comic Sans MS, Comic Sans, Arial;">
+
+<div class="bg-primary text-white text-center">
+    <img class="img-fluid" src="images/TWITCH_BANNER-larger.png" alt="Eric Charnesky banner image">
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/ericcharnesky/">GitHub</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/ericcharnesky">LinkedIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.twitch.tv/ericcharnesky">Twitch</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/ericcharnesky">Twitter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/@ericcharnesky">YouTube</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+      <h2>Countdown until Ken's retirement!</h2>
+      <div id="date-container">
+          Calculating...
+      </div>
+
+    <script>
+       function calculateDays(startDate, endDate) {
+        const timeDifference = endDate - startDate; // Difference in milliseconds
+        const daysDifference = timeDifference / (1000 * 60 * 60 * 24); // Convert to days
+        return Math.ceil(daysDifference); // Round to nearest whole number
+      }
+
+        function showDays() {
+          const today = new Date()
+          const retirement = new Date('2029-07-01')
+
+            // Format the output
+            let result = "<p><strong>";
+            result += calculateDays(today, retirement);
+            result += " days!</strong></p>"
+
+            return result;
+        }
+
+        // Call the function when the page loads and insert the result into the container
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('date-container');
+            container.innerHTML = showDays();
+        });
+    </script>
+  </div>
+  <img src="images/Kentle.jpg" height="300" />
+</div>
+
+<footer class="mt-5 p-4 bg-dark text-white text-center fixed-bottom">
+  <p>Have a smiley day!</p>
+</footer>
+
+</body>
+</html>
